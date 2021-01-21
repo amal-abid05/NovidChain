@@ -55,19 +55,15 @@ If using the Geth, run the mining with bellow command.
 $ truffle compile
 $ truffle migration
 ```
-3. Monitor Smart-Contract on object side.
+3. Logging to NovidChain
 ```
-$ node src/js/watching.js
+$ node src/js/login.js
 ```
-4. Create new action  
+4. Issuing Covid-19 credendials
 ```
-$ node src/js/createAction.js
+$ node src/js/issueCovidCredentials.js
 ```
-5. Delegate new action  
+5. Verifying Covid-19 credendials 
 ```
-$ node src/js/delegateAction.js
-```
-6. Send access request
-```
-$ node src/js/sendRequest.js
+$ node src/js/verifyCovidCredentials.js
 ```
