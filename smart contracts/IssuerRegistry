@@ -1,0 +1,31 @@
+pragma solidity ^0.6.3;
+
+contract IssuerRegistry { 
+    mapping(address=>bool) public isIssuer;
+    mapping(address=>bool) public isApprovingAuthority;
+    mapping(address=>bytes32) public issuerId;
+    event IssuerApproved(address indexed issuer, address indexed authority);
+    event IssuerRevoked(address indexed issuer, address indexed authority);
+
+    constructor (address[] memory authorities) public {
+        for (uint256 i = 0; i < authorities.length; ++i) {
+            isApprovingAuthority[authorities[i]] = true;
+        }
+    }
+    modifier onlyAuthority {
+        require(isApprovingAuthority[msg.sender], "You must be an authority.");
+        _;
+    }
+    function approve(address issuer, bytes32 id) public onlyAuthority {
+        require(!isIssuer[issuer], "Already an issuer.");
+        isIssuer[issuer] = true;
+        issuerId[issuer] = id;
+        emit IssuerApproved(issuer, msg.sender);
+    }
+    function revoke(address issuer) public onlyAuthority {
+        require(isIssuer[issuer], "Not an issuer.");
+        isIssuer[issuer] = false;
+        delete issuerId[issuer];
+        emit IssuerRevoked(issuer, msg.sender);
+    }
+}
