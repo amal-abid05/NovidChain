@@ -1,69 +1,65 @@
 # NovidChain
 
-## Requirement 
-- NodeJS v8.9.4 or later
-- Windows, Linux or Mac OS X
+
+## NovidChain: sample demo
+
+[![NovidChain Demo](https://img.youtube.com/vi/Zrn3Hzr45N0/mq3.jpg)](https://www.youtube.com/watch?v=Zrn3Hzr45N0)
+
+
 
 ## Installation
-### Install Ganache or Geth
-#### Ganache
 
-Ganache is the local Ethereum blockchain.
-It has many useful functions in developing Smart-Contract, such as creating an Ethereum account as soon as it starting and resetting the chain with one button, etc.
+To get started, download the repo, run install and build, then find the code for this example in the examples folder:
 
-Install from the link below  
-<https://www.trufflesuite.com/ganache>
-
-#### Geth
-Geth is a CUI client implemented by the programming language Go, which joins the Ethereum network as a full node by installing Geth,
-- mining ether
-- ether transfer
-- Generate smart contract
-- Generate transaction
-- Check blockchain
-
-Such operations are possible.
-
-##### For Ubuntu
-```
-$ sudo add-apt-repository -y ppa:ethereum/ethereum
-$ sudo apt-get update
-$ sudo apt-get install ethereum
+``` bash
+$ git clone https://github.com/amal-abid05/NovidChain.git
+$ cd dApp
+$ npm install
+$ npm run build
+$ cd app
 ```
 
-##### For Mac OS
-```
-$ brew tap ethereum/ethereum
-$ brew install ethereum
-```
- 
-### Install Truffle
-Truffle (<https://www.trufflesuite.com/>) is the framework of "Solidity" which is the programming language for Smart-Contract.
+
+
+
+
+
+## Create an Identity
+
+We use sample application identities (e.g., private keys) to issue and verify credentials on a server. For
+your own applications, you can create a new private key with this library, using the code snippet below:
 
 ```
-$ npm install -g truffle
+$ node
+> const { Credentials } = require('uport-credentials')
+> Credentials.createIdentity()
+{
+  did: 'did:ethr:0x123...',
+  privateKey: '3402abe3d...'
+}
 ```
 
-## Usage
-1. Startup the Ganache or the Geth client  
-If using the Geth, run the mining with bellow command.
+*Please note that in practice the signing key for the identity should remain private!*
+*It is recommended to store the address and private key in environment variables for your server application and NOT
+hardcode it in your source code.*
+
+
+## Issuing Covid-19 credendials
+
+Run the Credential Creator Service and open the URL in the terminal console output. This will request your DID
+(identifier) with a QR code on the browser; once it receives a response, it will issue a credential to that DID and
+send it through a push notification. The output can be found in terminal console.
+
+``` bash
+$ node createcredential.js
 ```
-> miner.start()
-```
-2. Deplpy the Smart-Contract
-```
-$ truffle compile
-$ truffle migration
-```
-3. Logging to NovidChain
-```
-$ node src/js/login.js
-```
-4. Issuing Covid-19 credendials
-```
-$ node src/js/issueCovidCredentials.js
-```
-5. Verifying Covid-19 credendials 
-```
-$ node src/js/verifyCovidCredentials.js
+
+## Verifying Covid-19 credendials 
+
+Once you have the credential in your uPort client, you can use the Requestor Service by running and opening the URL in
+the terminal console output. It will ask that you share the credential you just received. Upon receiving the credential,
+it will verify it. The output can be found in terminal console.
+
+``` bash
+$ node requestcredential.js
 ```
