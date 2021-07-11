@@ -16,7 +16,7 @@ See the video on youtube.
 To get started, download the repo, run install and build, then find the code for this example in the examples folder:
 
 ``` bash
-$ git clone https://github.com/amal-abid05/NovidChain.git
+$ git clone https://github.com/amal-abid05/NovidChain.git --depth 1
 $ cd dApp
 $ npm install
 $ npm run build
