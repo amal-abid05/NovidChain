@@ -22,10 +22,6 @@ $ cd app
 ```
 
 
-
-
-
-
 ## Create an Identity
 
 We use sample application identities (e.g., private keys) to issue and verify credentials on a server. For
@@ -64,4 +60,12 @@ it will verify it. The output can be found in terminal console.
 
 ``` bash
 $ node requestcredential.js
+```
+
+### Please cite the following paper if you used the code:
+
+``` 
+$ Abid, Amal, et al. "NovidChain: Blockchain‐based privacy‐preserving platform for COVID‐19 test/vaccine certificates." Software: Practice and Experience (2021).
+Link: https://onlinelibrary.wiley.com/doi/full/10.1002/spe.2983
+doi: https://doi.org/10.1002/spe.2983
 ```
