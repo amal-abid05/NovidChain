@@ -3,6 +3,8 @@
 
 ## NovidChain: sample demo
 
+See the video on youtube.
+
 [![NovidChain Demo](https://img.youtube.com/vi/Zrn3Hzr45N0/mq3.jpg)](https://www.youtube.com/watch?v=Zrn3Hzr45N0)
 
 
