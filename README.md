@@ -64,7 +64,7 @@ it will verify it. The output can be found in terminal console.
 $ node requestcredential.js
 ```
 
-### Please cite the following paper if you used the code:
+#### Please cite the following paper if you used the code:
 
 ``` 
 Abid, Amal, et al. "NovidChain: Blockchain‐based privacy‐preserving platform for COVID‐19 test/vaccine certificates." Software: Practice and Experience (2021).
