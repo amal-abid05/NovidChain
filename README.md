@@ -1,5 +1,7 @@
 # NovidChain
 
+NovidChain: Blockchain‐based privacy‐preserving platform for COVID‐19 test/vaccine certificates
+
 
 ## NovidChain: sample demo
 
@@ -65,7 +67,7 @@ $ node requestcredential.js
 ### Please cite the following paper if you used the code:
 
 ``` 
-$ Abid, Amal, et al. "NovidChain: Blockchain‐based privacy‐preserving platform for COVID‐19 test/vaccine certificates." Software: Practice and Experience (2021).
+Abid, Amal, et al. "NovidChain: Blockchain‐based privacy‐preserving platform for COVID‐19 test/vaccine certificates." Software: Practice and Experience (2021).
 Link: https://onlinelibrary.wiley.com/doi/full/10.1002/spe.2983
 doi: https://doi.org/10.1002/spe.2983
 ```
