@@ -23,6 +23,11 @@ $ npm run build
 $ cd app
 ```
 
+uPort mobile application should be installed on your phone:
+- Android: https://play.google.com/store/apps/details?id=com.uportMobile
+- iOS: https://apps.apple.com/us/app/uport-id/id1123434510
+- Github: https://github.com/uport-project/uport-mobile
+
 
 ## Create an Identity
 
